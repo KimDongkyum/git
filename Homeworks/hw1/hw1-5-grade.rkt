@@ -1,0 +1,31 @@
+#lang racket
+
+(require "common-grade.rkt")
+(require "hw1-4.rkt")
+(require "hw1-5.rkt")
+
+(define (crazy2addGrade)
+	(begin
+		(printf "crazy2add\n")
+        (output (equal? 2342 (crazy2val (crazy2add '(p n n p p p z z p z z n . p) '(p n n . n)))))
+        (output (equal? 16731 (crazy2val (crazy2add '(z n z p n n n n z n n n p z n . p) '(p z n n p z n n . p)))))
+        (output (equal? -2120 (crazy2val (crazy2add '(n n n n z z p n z n n p z n n z . p) '(n z z n n n n n p n z p p z n . n)))))
+        (output (equal? -19 (crazy2val (crazy2add 'z '(p z p p z . n)))))
+        (output (equal? 29844 (crazy2val (crazy2add '(n n z p n z z z z n p p z z . p) '(p n z z z n n z p p z p z p . z)))))
+        (output (equal? -120987 (crazy2val (crazy2add '(z p n z n p p n n n n p p p z n p p z . z) '(p n z p n p z n p p p z n z z p n z p . n)))))
+        (output (equal? -683 (crazy2val (crazy2add '(n z z . z) '(z p p z n p p z p z . n)))))
+        (output (equal? -37932 (crazy2val (crazy2add '(p p n z p z p p p n p n p p n . n) '(p z n n n p . z)))))
+        (output (equal? 19785 (crazy2val (crazy2add '(p p p n p p p p p z p n p z p . z) '(z n p p n p n . n)))))
+        (output (equal? 37090 (crazy2val (crazy2add '(n z . p) '(p p p p p z p n n n p z n p z . p)))))
+        (output (equal? -12 (crazy2val (crazy2add '(p z z p n p . n) '(n z p p n . p)))))
+        (output (equal? 65 (crazy2val (crazy2add '(z z n p n p n n n . p) '(n n z z . n)))))
+        (output (equal? 52687 (crazy2val (crazy2add '(p p n z n p p n z n z z n p n z . p) 'z))))
+        (output (equal? -2631 (crazy2val (crazy2add '(z n p z n p z z z n z n . z) '(p n z p z n p . n)))))
+        (output (equal? -10105 (crazy2val (crazy2add '(z z z n n z p z z . z) '(p p n z z p n n n n p p n n z . z)))))
+        (output (equal? -243379 (crazy2val (crazy2add '(z p . z) '(p n p n n n z n z p z n n p p z z z p . n)))))
+        (output (equal? 90534 (crazy2val (crazy2add '(p p z p z z z n z p z z z p n p p . z) '(p n p p . p)))))
+        (output (equal? -3059 (crazy2val (crazy2add '(p p z z z z z z z z n n z . z) '(z n n z . p)))))
+        (output (equal? -3722 (crazy2val (crazy2add '(z n n n z z z p p z z z . n) '(z z . p)))))
+        (output (equal? -23479 (crazy2val (crazy2add '(p p n n n z p p n p z z z p z n . z) '(z p z z z n n z p p z . z)))))))
+
+(crazy2addGrade)

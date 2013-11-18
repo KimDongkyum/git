@@ -1,0 +1,30 @@
+#lang racket
+
+(require "common-grade.rkt")
+(require "hw1-1.rkt")
+
+(define (gcdGrade)
+  (begin
+    (printf "gcd\n")
+    (output (equal? 8 (gcd 72 112)))
+    (output (equal? 7 (gcd 28 133)))
+    (output (equal? 9 (gcd 99 90)))
+    (output (equal? 56 (gcd 56 56)))
+    (output (equal? 12 (gcd 12 36)))
+    (output (equal? 18 (gcd 90 18)))
+    (output (equal? 21 (gcd 63 42)))
+    (output (equal? 4 (gcd 20 52)))
+    (output (equal? 42 (gcd 42 84)))
+    (output (equal? 6 (gcd 18 30)))
+    (output (equal? 6 (gcd 6 120)))
+    (output (equal? 2 (gcd 2 6)))
+    (output (equal? 32 (gcd 160 64)))
+    (output (equal? 6 (gcd 54 96)))
+    (output (equal? 1 (gcd 1 9)))
+    (output (equal? 8 (gcd 24 40)))
+    (output (equal? 8 (gcd 24 64)))
+    (output (equal? 4 (gcd 36 80)))
+    (output (equal? 5 (gcd 45 70)))
+    (output (equal? 2 (gcd 34 4)))))
+
+(gcdGrade)

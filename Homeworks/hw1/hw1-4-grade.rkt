@@ -1,0 +1,31 @@
+#lang racket
+
+(require "common-grade.rkt")
+(require "hw1-4.rkt")
+
+(define (crazy2valGrade)
+	(begin
+		(printf "crazy2val\n")
+        (output (equal? -23994 (crazy2val '(z p n n p z p z z n p z z n p n z z . z))))
+        (output (equal? 286 (crazy2val '(z p p n z p z z . p))))
+        (output (equal? -1 (crazy2val 'n)))
+        (output (equal? 1 (crazy2val '(p z z . z))))
+        (output (equal? 1 (crazy2val 'p)))
+        (output (equal? -185469 (crazy2val '(n z n n n p z p p n n z n z n p n n z . z))))
+        (output (equal? -301 (crazy2val '(p n n p p z n z n . z))))
+        (output (equal? 9 (crazy2val '(n n p p . z))))
+        (output (equal? 10 (crazy2val '(z n n z p . z))))
+        (output (equal? -1 (crazy2val '(p p p p . n))))
+        (output (equal? 659 (crazy2val '(p p z z n n p n n z . p))))
+        (output (equal? -3 (crazy2val '(n n . z))))
+        (output (equal? -11977 (crazy2val '(p n z p p n n n z p z z p z p p . n))))
+        (output (equal? -20 (crazy2val '(z z n z n . z))))
+        (output (equal? 23539 (crazy2val '(n z p z p n z z z z n z z p n n p . z))))
+        (output (equal? 1011 (crazy2val '(p n p z p p p p p n p . z))))
+        (output (equal? -13 (crazy2val '(n z p z p . n))))
+        (output (equal? 549 (crazy2val '(n p p z z n n n p n p z . z))))
+        (output (equal? -50441 (crazy2val '(n z z n z z z z p n p p n z p z n . z))))
+        (output (equal? 217 (crazy2val '(p z z n z p p . p))))
+        (output (equal? 7707 (crazy2val '(n z p p n n n n p n z z z . p))))))
+
+(crazy2valGrade)

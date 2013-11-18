@@ -1,0 +1,10 @@
+#lang racket
+
+(require "hw3-3-library.rkt")
+
+(provide mazeGen)
+
+
+(define (mazeGen n m)
+  (let ((maze (init-maze n m)))
+    (raise "TODO")))
