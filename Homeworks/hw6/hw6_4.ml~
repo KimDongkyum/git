@@ -25,4 +25,8 @@ let rec eval (f: formula): bool =
     | ANDALSO (l,r) -> (eval l) && (eval r)
     | ORELSE (l,r) -> (eval l) || (eval r)
     | IMPLY (l,r) -> (not (eval l) || (eval r))
-    | LESS (l,r) -> if (cal l)<(cal r) then true else false
+    | LESS (l,r) -> if (cal l)<(cal r) then true else false;;
+
+if (eval (IMPLY (ORELSE (FALSE, LESS (NUM 0, (PLUS (NUM (-1), NUM 0)))), FALSE)))
+then print_endline("true")
+else print_endline("false");;

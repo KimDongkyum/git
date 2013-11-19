@@ -37,3 +37,6 @@ let rec drop (t: tourna) (d: team): string =
 	if (drop l d)="" then (drop r d)
 	else if (drop r d)="" then (drop l d)
 	else "(" ^ (drop l d) ^ " " ^ (drop r d) ^ ")"
+
+let ex=(drop (NODE (NODE (NODE (LEAF Korea, LEAF France), LEAF Brazil), LEAF England)) England)
+let _=print_endline(ex);;
