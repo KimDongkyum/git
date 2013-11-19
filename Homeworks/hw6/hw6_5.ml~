@@ -5,14 +5,15 @@ type ae =
   | TIMES of ae list
   | SUM of ae list
 
-let rec diff (e: ae) (x: string): ae =
+let rec multiply_diff (f: ae -> ae) (l: ae list): ae =
+    (match l with
+      | [] -> CONST 0
+      | head::tail -> SUM (List.append [TIMES (List.append [(f head)] tail)] [TIMES [head; (multiply_diff f tail)]]))
+
+let rec my_diff (x: string) (e: ae): ae =
   match e with
     | CONST v -> CONST 0
     | VAR s -> if s=x then CONST 1 else CONST 0
     | POWER (l,r) -> if l=x then TIMES [CONST r; POWER (l,r-1)] else CONST 0
-    | TIMES lst-> 
-	(match lst with
-	   | head::tail -> (SUM [(TIMES (append [(diff head x)] tail)); (TIMES (append [head] (diff tail x)))]))
-    | SUM lst ->
-	(match lst with
-	   | head::tail -> (append (diff head x) (diff tail x)))
+    | TIMES lst -> (multiply_diff (my_diff x) lst) 
+    | SUM lst -> SUM (List.map (my_diff x) lst)
