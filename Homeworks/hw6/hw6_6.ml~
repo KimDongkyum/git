@@ -6,7 +6,7 @@ type crazy2 =
 
 let rec crazy2val (c:crazy2): int =
   match c with
-    | NIL -> 0
+    | Nil -> 0
     | ZERO v -> (crazy2val v)
     | ONE v -> 1+2*(crazy2val v)
     | MONE v -> -1+2*(crazy2val v)

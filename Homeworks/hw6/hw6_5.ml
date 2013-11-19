@@ -6,9 +6,11 @@ type ae =
   | SUM of ae list
 
 let rec multiply_diff (f: ae -> ae) (l: ae list): ae =
-    (match l with
+    match l with
       | [] -> CONST 0
-      | head::tail -> SUM (List.append [TIMES (List.append [(f head)] tail)] [TIMES [head; (multiply_diff f tail)]]))
+      | head::tail -> 
+	 (if tail=[] then (f head)
+	  else SUM (List.append [TIMES (List.append [(f head)] tail)] [TIMES [head; (multiply_diff f tail)]]))
 
 let rec my_diff (x: string) (e: ae): ae =
   match e with
